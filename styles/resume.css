@@ -1,0 +1,274 @@
+/* Basic Reset and Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding/border don't affect width calculations */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #212120;
+    line-height: 1.6;
+}
+
+.resume-page {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.resume-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.resume-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.job-subtitle {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.resume-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.resume-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 24px 28px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.resume-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.resume-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+/* Typography Styling */
+h1, h2, h3 {
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #212120;
+    font-size: 2.5rem;
+    margin-bottom: 2px;
+}
+
+h2 {
+    border-bottom: 2px solid #212120;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    color: #212120;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: #212120;
+    margin-top: 0;
+}
+
+.card > header h1,
+.card > header h2 {
+    margin-bottom: 0;
+    line-height: 1.05;
+}
+
+.card > header h3,
+.card > header p {
+    margin-top: 0;
+    margin-bottom: 22px;
+    line-height: 1.1;
+}
+
+.card > header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.collapse-card {
+    overflow: hidden;
+}
+
+.card > header + .collapse-card {
+    margin-top: 20px;
+}
+
+.collapse-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #919495;
+    padding: 0 0 8px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.collapse-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ed2b2a;
+}
+
+.collapse-icon {
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform .2s ease;
+}
+
+.collapse-toggle[aria-expanded="true"] .collapse-icon {
+    transform: rotate(180deg);
+}
+
+.collapse-content {
+    padding-top: 12px;
+}
+
+.resume-cta-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 14px;
+}
+
+.resume-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 16px;
+    border-radius: 999px;
+    background-color: #ed2b2a;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color .25s ease, transform .25s ease;
+}
+
+.resume-download-btn:hover {
+    background-color: #ed2b2a;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.title, .company, .school {
+    font-style: italic;
+    color: #212120;
+    margin-bottom: 10px;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 20px;
+}
+
+/* Treat resume blocks as hoverable boxes */
+.card > header,
+.card > .section:not(.two-col),
+.section.two-col > div {
+    background-color: #e9eaea;
+    border: 1px solid #919495;
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform .3s cubic-bezier(0.4, 0.0, 0.2, 1.0), box-shadow .3s cubic-bezier(0.4, 0.0, 0.2, 1.0);
+    transform-origin: center;
+}
+
+.card > header:hover,
+.card > .section:not(.two-col):hover,
+.section.two-col > div:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+ul {
+    list-style-type: none; /* Remove default bullet points for clean look */
+    margin-left: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+.section.two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+.section.two-col > div ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 20px;
+}
+
+/* Links and Icons */
+a {
+    color: #212120;
+    text-decoration: none; /* Remove default underline */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.fa {
+    margin-right: 8px;
+    color: #f7f8f9;
+}
+
+/* Responsiveness (Example Media Query) */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .section.two-col {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .section.two-col > div ul {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+
+    .collapse-content h3,
+    .collapse-content h4,
+    .collapse-content p,
+    .collapse-content ul {
+        margin-top: 0;
+    }
